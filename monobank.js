@@ -6,7 +6,8 @@ export async function createInvoice(amount) {
     {
       amount: amount * 100,
       ccy: 980,
-      redirectUrl: 'https://t.me/brylik_oplati_bot'
+      redirectUrl: 'https://t.me/brylik_oplati_bot',
+      webHookUrl: process.env.WEBHOOK_URL + '/webhook/monobank'
     },
     {
       headers: { 'X-Token': process.env.MONO_TOKEN }
