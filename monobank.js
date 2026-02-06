@@ -10,7 +10,10 @@ export async function createInvoice(amount) {
       webHookUrl: process.env.WEBHOOK_URL + '/webhook/monobank'
     },
     {
-      headers: { 'X-Token': process.env.MONO_TOKEN }
+      headers: {
+  'X-Token': process.env.MONOBANK_TOKEN,
+  'Content-Type': 'application/json'
+}
     }
   );
 
