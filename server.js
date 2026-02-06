@@ -7,6 +7,14 @@ import 'dotenv/config';
  app.use(express.json());
  
  app.post('/webhook/monobank', async (req, res) => {
+  console.log('📥 MONOBANK WEBHOOK HIT');
+  console.log('HEADERS:', req.headers);
+  console.log('BODY:', req.body);
+
+  const { invoiceId, status } = req.body;
+  ...
+});
+
    const { invoiceId, status } = req.body;
  
    if (status !== 'success') {
