@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export async function createInvoice(amount) {
   const res = await axios.post(
     'https://api.monobank.ua/api/merchant/invoice/create',
@@ -10,9 +8,14 @@ export async function createInvoice(amount) {
       webHookUrl: `${process.env.WEBHOOK_URL}/webhook/monobank`
     },
     {
-      headers: { 'X-Token': process.env.MONO_TOKEN }
+      headers: {
+        'X-Token': process.env.MONO_TOKEN,
+        'Content-Type': 'application/json'
+      }
     }
   );
+
+  console.log('🧾 Invoice created:', res.data);
 
   return res.data;
 }
