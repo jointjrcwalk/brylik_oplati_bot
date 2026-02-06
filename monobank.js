@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export async function createInvoice(amount) {
   const res = await axios.post(
     'https://api.monobank.ua/api/merchant/invoice/create',
