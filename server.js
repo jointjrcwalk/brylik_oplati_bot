@@ -10,7 +10,7 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok', time: new Date().toISOString() });
 });
 
-app.get('/test-invite/:userId', async (req, res) => {
+app.get('/testinvite/:userId', async (req, res) => {
   try {
     await sendPaidMessage(req.params.userId);
     res.json({ status: 'sent' });
