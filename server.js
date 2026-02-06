@@ -11,10 +11,6 @@ import 'dotenv/config';
   console.log('HEADERS:', req.headers);
   console.log('BODY:', req.body);
 
-  const { invoiceId, status } = req.body;
-  ...
-});
-
    const { invoiceId, status } = req.body;
  
    if (status !== 'success') {
