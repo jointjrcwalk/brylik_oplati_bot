@@ -11,7 +11,7 @@ export async function createInvoice(amount) {
     },
     {
       headers: {
-        'X-Token': process.env.MONO_TOKEN_TEST,
+        'X-Token': process.env.MONO_TOKEN,
         'Content-Type': 'application/json'
       }
     }
